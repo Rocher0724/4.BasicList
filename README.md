@@ -46,7 +46,30 @@ LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYO
 * cardview 에 onclick 이벤트를 사용한다.
 
 ```
-// card view에 애니메이션 효과 사용
-    Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
-    holder.cardView.setAnimation(animation);
+    // listView에서 getView()와 같은 역할을 하는 함수
+    @Override
+    public void onBindViewHolder(CustomViewHolder holder, int position) {
+
+        // setOnClikListener 안에서 user.id와 user.name을 사용하기 위해서 final 선언이 필요
+        final User user = datas.get(position);
+        holder.txtId.setText(user.id+"");
+        holder.txtName.setText(user.name);
+        holder.txtAge.setText((user.age+""));
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("no", user.id);
+                intent.putExtra("day", user.name);
+
+                context.startActivity(intent);
+            }
+        });
+
+        // card view에 애니메이션 효과 사용
+        Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+        holder.cardView.setAnimation(animation);
+
+    }
 ```
