@@ -3,8 +3,8 @@
 
 # BasicList
 리스트뷰 사용법
-##  ListView + BaseAdapter
 
+##  ListView + BaseAdapter
 * BaseAdapter 를 커스터마이징해서 ListView 를 세팅하였다.
 ```
 // 생성자에서 inflater를 만들어주고
@@ -19,7 +19,7 @@ LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYO
         }
     }
 ```
-
+##  ListView + holder + BaseAdapter
 * list view holder를 이용한다.
 ```
     // 각 행에서 사용되는 위젯을 재사용하기 위한 Holder 클래스를 사용한다.
@@ -29,7 +29,7 @@ LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYO
         public TextView mTxtAge;
     }
 ```
-
+##  RecyclerView + holder + RecyclerView.Adapter
 * RecyclerView.Adapter를 커스터마이징 하여 Recycler view를 사용한다.
 
 ```
@@ -41,6 +41,7 @@ LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYO
         return holder;
     }
 ```
+##  RecyclerView + holder + card + RecyclerView.Adapter
 * xmlns 로 namespace를 정의해서 Recycler Card view를 사용한다.
 * cardview 에 onclick 이벤트를 사용한다.
 
