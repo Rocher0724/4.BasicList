@@ -28,8 +28,8 @@ public class RecyclerCustomAdapter extends RecyclerView.Adapter<RecyclerCustomAd
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
-        CustomViewHolder cvh = new CustomViewHolder(view);
-        return cvh;
+        CustomViewHolder holder = new CustomViewHolder(view);
+        return holder;
     }
 
     // listView에서 getView()함수를 대체하는 함수
